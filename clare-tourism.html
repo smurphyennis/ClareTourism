@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+  County Clare Tourist Website
+  ----------------------------
+  This HTML file builds the structure/content of the page.
+  The visual design is kept in a separate file called styles.css.
+
+  To use the site:
+  1. Keep clare-tourism.html and styles.css in the same folder.
+  2. Open clare-tourism.html in a browser.
+  3. Edit the text, links, and image URLs below to customise the page.
+-->
+<html lang="en">
+<head>
+  <!-- Sets the character encoding so special characters display correctly. -->
+  <meta charset="UTF-8" />
+
+  <!-- Makes the page responsive on phones, tablets, and desktop screens. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- The title appears in the browser tab. -->
+  <title>Visit County Clare | Tourist Guide</title>
+
+  <!-- Short description for search engines and social previews. -->
+  <meta name="description" content="A tourist guide to County Clare, Ireland, including attractions, towns, history, food, pubs, maps and public transport." />
+
+  <!-- This connects the external CSS file to the HTML page. -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header contains the site name and navigation menu. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" href="#top">Visit Co. Clare</a>
+
+      <!-- These links jump to different sections on the same page. -->
+      <ul class="nav-links">
+        <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#towns">Towns</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#food">Food & Drink</a></li>
+        <li><a href="#transport">Transport</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main page content starts here. -->
+  <main id="top">
+    <!-- Hero section: large intro area with a background image set in CSS. -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Wild Atlantic Way · Ireland</p>
+        <h1>Explore County Clare</h1>
+        <p>
+          Discover dramatic sea cliffs, limestone landscapes, traditional music,
+          colourful towns, welcoming pubs and some of Ireland’s most memorable coastal views.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#attractions">Start exploring</a>
+          <a class="button secondary" href="https://visitclare.ie/" target="_blank" rel="noopener">Official Visit Clare website</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attractions section uses cards to present top places. -->
+    <section id="attractions" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Things to see</p>
+        <h2>Popular attractions</h2>
+        <p>Use this list as a starting point for planning day trips around Clare.</p>
+      </div>
+
+      <!-- A grid layout places these attraction cards neatly on the page. -->
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=900&q=80" alt="Cliffs of Moher on the west coast of Ireland" />
+          <div class="card-content">
+            <h3>Cliffs of Moher</h3>
+            <p>One of Ireland’s best-known natural landmarks, with Atlantic views, visitor facilities and nearby coastal villages.</p>
+            <a href="https://www.cliffsofmoher.ie/" target="_blank" rel="noopener">Visit the official site</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600786856740-2dc233236d7c?auto=format&fit=crop&w=900&q=80" alt="The Burren limestone landscape in County Clare" />
+          <div class="card-content">
+            <h3>The Burren</h3>
+            <p>A unique limestone landscape famous for archaeology, rare plants, walking trails and the Burren & Cliffs of Moher UNESCO Global Geopark.</p>
+            <a href="https://www.burrengeopark.ie/" target="_blank" rel="noopener">Explore the Geopark</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=900&q=80" alt="Medieval castle in Ireland" />
+          <div class="card-content">
+            <h3>Bunratty Castle & Folk Park</h3>
+            <p>A family-friendly historic attraction where visitors can explore a medieval castle and recreated village life.</p>
+            <a href="https://www.bunrattycastle.ie/" target="_blank" rel="noopener">Plan a visit</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Coastal lighthouse landscape" />
+          <div class="card-content">
+            <h3>Loop Head Peninsula</h3>
+            <p>A scenic peninsula with lighthouse views, sea cliffs, wildlife watching and quiet coastal routes.</p>
+            <a href="https://visitclare.ie/attractions/loop-head-lighthouse/" target="_blank" rel="noopener">Learn more</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Map section embeds an OpenStreetMap view of County Clare. -->
+    <section id="map" class="section section-alt">
+      <div class="section-heading">
+        <p class="eyebrow">Find your way</p>
+        <h2>Tourist map</h2>
+        <p>This interactive map is centred on County Clare. You can zoom, drag and explore nearby towns and attractions.</p>
+      </div>
+
+      <!-- The iframe loads an external interactive map from OpenStreetMap. -->
+      <div class="map-wrapper">
+        <iframe
+          title="Map of County Clare"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-10.317%2C52.45%2C-8.35%2C53.20&amp;layer=mapnik"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <p class="small-note">
+        For route planning, try
+        <a href="https://www.google.com/maps/search/County+Clare+Ireland+attractions/" target="_blank" rel="noopener">Google Maps</a>
+        or the
+        <a href="https://www.transportforireland.ie/" target="_blank" rel="noopener">Transport for Ireland journey planner</a>.
+      </p>
+    </section>
+
+    <!-- Main towns section. -->
+    <section id="towns" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Where to go</p>
+        <h2>Main towns and villages</h2>
+        <p>Each town has its own character, from market streets to seaside music sessions.</p>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-box">
+          <h3>Ennis</h3>
+          <p>The county town, known for shopping, traditional music, narrow streets and access to bus and rail services.</p>
+        </article>
+        <article class="info-box">
+          <h3>Doolin</h3>
+          <p>A small village famous for traditional Irish music, ferries to the Aran Islands and proximity to the Cliffs of Moher.</p>
+        </article>
+        <article class="info-box">
+          <h3>Lahinch</h3>
+          <p>A lively seaside town popular for surfing, beach walks, golf and summer holidays.</p>
+        </article>
+        <article class="info-box">
+          <h3>Killaloe</h3>
+          <p>A historic riverside town on Lough Derg, linked with Brian Boru and outdoor activities on the Shannon.</p>
+        </article>
+        <article class="info-box">
+          <h3>Kilrush</h3>
+          <p>A heritage town near the Shannon Estuary, Scattery Island and the Loop Head route.</p>
+        </article>
+        <article class="info-box">
+          <h3>Lisdoonvarna</h3>
+          <p>A spa town near the Burren, well known for its matchmaking festival and traditional hospitality.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- History section gives visitors a short cultural overview. -->
+    <section id="history" class="section section-image-text">
+      <div>
+        <img class="rounded-image" src="https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=1000&q=80" alt="Ancient stone landscape in Ireland" />
+      </div>
+      <div>
+        <p class="eyebrow">Past and culture</p>
+        <h2>A county shaped by landscape and legend</h2>
+        <p>
+          Clare’s history includes prehistoric tombs in the Burren, early Christian monastic sites,
+          medieval castles, Gaelic lordships, maritime communities and strong traditions of Irish music.
+        </p>
+        <p>
+          Visitors can explore places associated with Brian Boru, the High King of Ireland, as well as
+          heritage sites such as Bunratty Castle, Scattery Island and the many archaeological remains scattered across the Burren.
+        </p>
+        <a class="text-link" href="https://visitclare.ie/history-heritage/" target="_blank" rel="noopener">Read more about Clare history and heritage</a>
+      </div>
+    </section>
+
+    <!-- Food and drink section includes restaurants and pubs. -->
+    <section id="food" class="section section-alt">
+      <div class="section-heading">
+        <p class="eyebrow">Food, pubs and music</p>
+        <h2>Restaurants and pubs</h2>
+        <p>Clare is a great county for seafood, farm produce, cosy pubs and traditional music sessions.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="panel">
+          <h3>Restaurant ideas</h3>
+          <ul class="feature-list">
+            <li>Look for seafood in coastal towns such as Doolin, Lahinch, Kilkee and Ballyvaughan.</li>
+            <li>Try cafés and restaurants in Ennis for relaxed lunches, local produce and evening meals.</li>
+            <li>Explore the Burren Food Trail for producers, cafés and food experiences.</li>
+          </ul>
+          <a href="https://www.discoverireland.ie/clare" target="_blank" rel="noopener">Find food inspiration on Discover Ireland</a>
+        </div>
+
+        <div class="panel">
+          <h3>Pubs and traditional music</h3>
+          <ul class="feature-list">
+            <li>Doolin is one of Ireland’s best-known villages for traditional music sessions.</li>
+            <li>Ennis has a strong music scene and many pubs within walking distance of the town centre.</li>
+            <li>Always check pub websites or social pages for current session times and opening hours.</li>
+          </ul>
+          <a href="https://visitclare.ie/traditional-music/" target="_blank" rel="noopener">Explore traditional music in Clare</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Public transport section gives practical visitor advice. -->
+    <section id="transport" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Getting around</p>
+        <h2>Public transport information</h2>
+        <p>Check live timetables before travelling, especially in rural areas where services can be less frequent.</p>
+      </div>
+
+      <div class="transport-layout">
+        <article class="info-box highlight-box">
+          <h3>Bus and journey planning</h3>
+          <p>
+            Use Transport for Ireland for national journey planning, live departures and connections between bus and rail services.
+          </p>
+          <a href="https://www.transportforireland.ie/" target="_blank" rel="noopener">Open Transport for Ireland</a>
+        </article>
+
+        <article class="info-box highlight-box">
+          <h3>Local Link Clare</h3>
+          <p>
+            TFI Local Link provides rural bus routes connecting Clare towns, villages and communities, including routes useful for visitors.
+          </p>
+          <a href="https://www.locallinklc.ie/clare-routes/" target="_blank" rel="noopener">View Local Link Clare routes</a>
+        </article>
+
+        <article class="info-box highlight-box">
+          <h3>Rail</h3>
+          <p>
+            Ennis is connected by rail, with onward links through Limerick. Check Irish Rail for current train times and fares.
+          </p>
+          <a href="https://www.irishrail.ie/" target="_blank" rel="noopener">Check Irish Rail</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer appears at the bottom of the page. -->
+  <footer class="site-footer">
+    <p>&copy; 2026 County Clare Tourist Guide. Educational sample website.</p>
+    <p>
+      Useful links:
+      <a href="https://visitclare.ie/" target="_blank" rel="noopener">Visit Clare</a> ·
+      <a href="https://www.discoverireland.ie/clare" target="_blank" rel="noopener">Discover Ireland</a> ·
+      <a href="https://www.transportforireland.ie/" target="_blank" rel="noopener">Transport for Ireland</a>
+    </p>
+  </footer>
+</body>
+</html>

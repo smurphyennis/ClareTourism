@@ -1,0 +1,353 @@
+/*
+  County Clare Tourist Website Stylesheet
+  ---------------------------------------
+  This file controls the colours, spacing, layout, typography and responsive behaviour.
+  The matching HTML file is clare-tourism.html.
+*/
+
+/* The universal selector applies this rule to every element on the page. */
+* {
+  box-sizing: border-box; /* Includes padding and borders inside an element's total width/height. */
+  margin: 0;             /* Removes browser default margins. */
+  padding: 0;            /* Removes browser default padding. */
+}
+
+/* :root stores reusable design variables. Change these once to update the whole site. */
+:root {
+  --primary: #0f5c5c;       /* Main teal colour used for headings and buttons. */
+  --primary-dark: #0a3f3f;  /* Darker teal for hover effects. */
+  --sand: #f6efe3;          /* Warm background colour. */
+  --cream: #fffaf2;         /* Light card background. */
+  --ink: #1d2b2b;           /* Main text colour. */
+  --muted: #657575;         /* Softer text colour for notes. */
+  --white: #ffffff;         /* Plain white. */
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.12); /* Reusable soft shadow. */
+  --radius: 22px;           /* Rounded corners used on cards and panels. */
+}
+
+/* The body rule sets the default font and page background. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+/* Images are made responsive so they never overflow their container. */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links inherit the site colour and have a bold style for visibility. */
+a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Hover/focus states help users see interactive elements. */
+a:hover,
+a:focus {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Sticky header keeps navigation visible while scrolling. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 250, 242, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 92, 92, 0.12);
+}
+
+/* Navbar arranges the logo and menu links in a horizontal row. */
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo styling makes the site name stand out. */
+.logo {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  letter-spacing: 0.02em;
+}
+
+/* The navigation list is displayed in a row on large screens. */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* Navigation links use a small pill shape. */
+.nav-links a {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Hero area uses a background image with a dark overlay for readable text. */
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.25rem;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.35)),
+    url("https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=1800&q=80") center/cover;
+  color: var(--white);
+}
+
+/* Hero content is constrained so the text doesn't stretch too wide. */
+.hero-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Main hero heading. */
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 1;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Hero paragraph is slightly larger than standard text. */
+.hero p {
+  max-width: 680px;
+  font-size: 1.15rem;
+}
+
+/* Eyebrow text is used as a small section label. */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #d99b43;
+}
+
+/* Groups the hero buttons together. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Base button style shared by primary and secondary buttons. */
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* Primary button has a filled background. */
+.button.primary {
+  background: #d99b43;
+  color: #16100a;
+}
+
+/* Secondary button is lighter and semi-transparent. */
+.button.secondary {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* Section sets consistent spacing and maximum width. */
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+}
+
+/* Alternate section background spans full width using box-shadow trick. */
+.section-alt {
+  background: var(--sand);
+  box-shadow: 0 0 0 100vmax var(--sand);
+  clip-path: inset(0 -100vmax);
+}
+
+/* Section headings are centred and constrained for readability. */
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/* Section heading size. */
+.section-heading h2,
+.section-image-text h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-dark);
+  margin: 0.4rem 0 0.75rem;
+}
+
+/* Card grid automatically creates responsive columns. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card style for attractions. */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Card images use a fixed height for a tidy grid. */
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+/* Inner spacing for card text. */
+.card-content {
+  padding: 1.25rem;
+}
+
+/* Card headings. */
+.card h3,
+.info-box h3,
+.panel h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.45rem;
+}
+
+/* Embedded map wrapper creates rounded corners and shadow. */
+.map-wrapper {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 6px solid var(--white);
+}
+
+/* The map iframe fills the wrapper. */
+.map-wrapper iframe {
+  width: 100%;
+  min-height: 460px;
+  border: 0;
+}
+
+/* Small note under the map. */
+.small-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Info grid is used for towns and transport cards. */
+.info-grid,
+.transport-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Info boxes are simple rounded content blocks. */
+.info-box,
+.panel {
+  background: var(--white);
+  padding: 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(15, 92, 92, 0.12);
+}
+
+/* Highlight boxes get a soft shadow to draw attention. */
+.highlight-box {
+  box-shadow: var(--shadow);
+}
+
+/* Image/text section creates a two-column layout. */
+.section-image-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Rounds the history image. */
+.rounded-image {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-height: 420px;
+  object-fit: cover;
+}
+
+/* Text links provide a little spacing from paragraphs. */
+.text-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Two-column layout for restaurant/pub panels. */
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Feature list spacing. */
+.feature-list {
+  padding-left: 1.2rem;
+  margin: 0.75rem 0 1rem;
+}
+
+/* List item spacing. */
+.feature-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer styling. */
+.site-footer {
+  text-align: center;
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 2rem 1.25rem;
+}
+
+/* Footer links use a warm colour for contrast. */
+.site-footer a {
+  color: #ffd08a;
+}
+
+/* Responsive rules for tablets and phones. */
+@media (max-width: 800px) {
+  /* Stack the navigation vertically on smaller screens. */
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* Reduce hero height so it fits better on mobile. */
+  .hero {
+    min-height: 60vh;
+    padding: 4rem 1.25rem;
+  }
+
+  /* Single-column layout for history and food sections. */
+  .section-image-text,
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make the map slightly shorter on smaller screens. */
+  .map-wrapper iframe {
+    min-height: 340px;
+  }
+}
